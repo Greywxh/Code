@@ -1,0 +1,147 @@
+COUNT EQU 10
+
+DATA SEGMENT 
+    NUM DW 10 DUP('?')
+    INPUT DB 7, 0, 6 DUP('?')
+    OUTPUT DB 6 DUP(0)
+    INFOR1 DB "Please Input the 10 Numbers:", 0AH, 0DH, '$'
+    INFOR2 DB "The max found in the 10 numbers is $"
+    INFOR3 DB 0AH, 0DH, '$'
+DATA ENDS
+
+STACK SEGMENT stack
+    DATA2 DW 40 DUP(?)
+    TOP='$'-DATA2
+STACK ENDS
+
+CODE SEGMENT
+      ASSUME CS:CODE, DS:DATA, SS:STACK
+START:
+    MOV AX, DATA
+    MOV DS, AX
+    MOV AX, STACK
+    MOV SS, AX
+    MOV AX, TOP
+    MOV SP, AX
+
+DSTRING MACRO STRING
+    PUSH DX
+    PUSH AX
+    MOV DX, OFFSET STRING
+    MOV AH, 09H
+    INT 21H
+    POP AX 
+    POP DX
+    ENDM
+
+    DSTRING INFOR1
+    MOV BX, OFFSET NUM
+    MOV CX, COUNT
+ 
+AGAIN3:
+    CALL GETNUMBER
+    DSTRING INFOR3
+    MOV [BX], AX
+    ADD BX,2
+    LOOP AGAIN3
+
+    MOV AX, OFFSET NUM
+    PUSH AX
+    MOV CX, COUNT
+    PUSH CX
+
+    CALL FINDMAX
+
+    DSTRING INFOR2
+    CALL SHOWNUMBER
+    MOV AH, 4CH
+    INT 21H
+
+GETNUMBER PROC
+    PUSH BX
+    PUSH CX
+    PUSH DX
+    PUSHF
+    MOV DX, OFFSET INPUT
+    MOV AH, 0AH
+    INT 21H
+    MOV CL, INPUT+1
+    MOV CH, 0
+    MOV SI, OFFSET INPUT+2
+    MOV AX, 0
+AGAIN1:
+    MOV DX, 10
+    MUL DX
+    AND BYTE PTR [SI], 0FH
+    ADD AL, [SI]
+    INC SI
+    LOOP AGAIN1
+    POPF
+    POP DX
+    POP CX
+    POP BX
+    RET
+GETNUMBER ENDP
+
+SHOWNUMBER PROC
+    PUSH AX
+    PUSH BX
+    PUSH CX
+    PUSH DX
+    PUSHF
+    MOV BX,OFFSET OUTPUT+6
+    MOV BYTE PTR [BX], '$'
+    MOV CX, 10
+    AGAIN2:
+    MOV DX, 0
+    DIV CX
+    ADD DL, 30H
+    DEC BX
+    MOV [BX], DL
+    OR AX, AX
+    JNZ AGAIN2
+    PUSH DX
+    MOV AH,02H
+    MOV DL,0DH
+    INT 21H
+    MOV AH,02H
+    MOV DL,0AH
+    INT 21H
+    POP DX
+    MOV DX,OFFSET OUTPUT
+    MOV AH, 09H
+    INT 21H
+    POPF
+    POP DX
+    POP CX
+    POP BX
+    POP AX
+    RET
+SHOWNUMBER ENDP
+
+FINDMAX PROC
+    PUSH BX
+    PUSH CX
+    PUSH DX
+    PUSHF
+    MOV BP,SP
+    MOV CX,[BP+10]
+    MOV BX,[BP+12]
+    DEC CX
+    MOV AX,[BX]
+AGAIN4:
+    CMP AX,[BX+2]
+    JAE MARK
+    MOV AX,[BX+2]
+MARK:
+    ADD BX,2
+    LOOP AGAIN4
+    POPF
+    POP DX
+    POP CX
+    POP BX
+    RET 4
+FINDMAX ENDP
+ 
+CODE ENDS
+     END START
