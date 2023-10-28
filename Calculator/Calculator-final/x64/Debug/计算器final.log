@@ -1,0 +1,28 @@
+﻿  calculator.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include\graphics.h(1,1): warning C4828: 文件包含在偏移 0x19d3 处开始的字符，该字符在当前源字符集中无效(代码页 936)。
+C:\Users\20618\source\repos\计算器final\计算器final\calculator.cpp(380,30): warning C4244: “return”: 从“double”转换到“float”，可能丢失数据
+C:\Users\20618\source\repos\计算器final\计算器final\calculator.cpp(386,43): warning C4244: “return”: 从“double”转换到“float”，可能丢失数据
+C:\Users\20618\source\repos\计算器final\计算器final\calculator.cpp(394,14): warning C4244: “return”: 从“double”转换到“float”，可能丢失数据
+C:\Users\20618\source\repos\计算器final\计算器final\calculator.cpp(396,43): warning C4244: “return”: 从“double”转换到“float”，可能丢失数据
+C:\Users\20618\source\repos\计算器final\计算器final\calculator.cpp(404,14): warning C4244: “return”: 从“double”转换到“float”，可能丢失数据
+C:\Users\20618\source\repos\计算器final\计算器final\calculator.cpp(413,13): warning C4244: “return”: 从“double”转换到“float”，可能丢失数据
+C:\Users\20618\source\repos\计算器final\计算器final\calculator.cpp(415,44): warning C4244: “return”: 从“double”转换到“float”，可能丢失数据
+C:\Users\20618\source\repos\计算器final\计算器final\calculator.cpp(423,13): warning C4244: “return”: 从“double”转换到“float”，可能丢失数据
+C:\Users\20618\source\repos\计算器final\计算器final\calculator.cpp(432,15): warning C4244: “return”: 从“double”转换到“float”，可能丢失数据
+C:\Users\20618\source\repos\计算器final\计算器final\calculator.cpp(441,14): warning C4244: “return”: 从“double”转换到“float”，可能丢失数据
+C:\Users\20618\source\repos\计算器final\计算器final\calculator.cpp(536,12): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+C:\Users\20618\source\repos\计算器final\计算器final\calculator.cpp(545,12): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+C:\Users\20618\source\repos\计算器final\计算器final\calculator.cpp(562,14): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+C:\Users\20618\source\repos\计算器final\计算器final\calculator.cpp(588,18): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+C:\Users\20618\source\repos\计算器final\计算器final\calculator.cpp(656,31): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+C:\Users\20618\source\repos\计算器final\计算器final\calculator.cpp(679,49): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+C:\Users\20618\source\repos\计算器final\计算器final\calculator.cpp(676,8): warning C4101: “data”: 未引用的局部变量
+C:\Users\20618\source\repos\计算器final\计算器final\calculator.cpp(702,35): warning C4244: “return”: 从“int”转换到“float”，可能丢失数据
+C:\Users\20618\source\repos\计算器final\计算器final\calculator.cpp(703,29): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+C:\Users\20618\source\repos\计算器final\计算器final\calculator.cpp(711,11): warning C4244: “初始化”: 从“float”转换到“int”，可能丢失数据
+C:\Users\20618\source\repos\计算器final\计算器final\calculator.cpp(718,3): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _itoa. See online help for details.
+C:\Users\20618\source\repos\计算器final\计算器final\calculator.cpp(742,28): warning C4244: “初始化”: 从“float”转换到“int”，可能丢失数据
+C:\Users\20618\source\repos\计算器final\计算器final\calculator.cpp(807,11): warning C4101: “m”: 未引用的局部变量
+C:\Users\20618\source\repos\计算器final\计算器final\calculator.cpp(265): warning C4715: “Exp_Push_Stack_Operation”: 不是所有的控件路径都返回值
+C:\Users\20618\source\repos\计算器final\计算器final\calculator.cpp(361): warning C4715: “Compare_Char”: 不是所有的控件路径都返回值
+  计算器final.vcxproj -> C:\Users\20618\source\repos\计算器final\x64\Debug\计算器final.exe
